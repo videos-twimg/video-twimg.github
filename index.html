@@ -2,17 +2,34 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>movie</title>
 
+  <!-- OGP: あなたのカードを出す -->
   <meta property="og:title" content="movie">
+  <meta property="og:description" content="">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://videos-twimg.github.io/t/">
   <meta property="og:image" content="https://videos-twimg.github.io/t/preview.jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
-  <meta http-equiv="refresh" content="0; url=https://lite.tiktok.com/t/ZS9esvRayH6Aa-sLynN/">
+  <script>
+    const target = "https://lite.tiktok.com/t/ZS9esvRayH6Aa-sLynN/";
+
+    // Threads/Meta系のクローラっぽいUAはリダイレクトしない（カード生成用）
+    const ua = navigator.userAgent || "";
+    const isCrawler =
+      /facebookexternalhit|Facebot|Instagram|Threads|WhatsApp|Meta/i.test(ua);
+
+    if (!isCrawler) {
+      // 人間のブラウザだけ即遷移（少し遅らせると安定）
+      setTimeout(() => location.replace(target), 100);
+    }
+  </script>
 </head>
-<body>
+<body style="font-family:system-ui;padding:16px">
+  <p>開いています…</p>
+  <p><a href="https://lite.tiktok.com/t/ZS9esvRayH6Aa-sLynN/">開かない場合はこちら</a></p>
 </body>
 </html>
