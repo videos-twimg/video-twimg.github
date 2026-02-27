@@ -3,35 +3,33 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-
-  <!-- ここ重要：リンクカード用（OGP） -->
-  <meta property="og:title" content="movie">
-  <meta property="og:description" content="">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://video-twimg.github.io/">
-  <meta property="og:image" content="https://videos-twimg.github.io/video-twimg.github/preview.jpeg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-
-  <!-- X(Twitter)向け -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="movie">
-  <meta name="twitter:description" content="">
-  <meta property="og:image" content="https://videos-twimg.github.io/video-twimg.github/preview.jpeg">
-
   <title>movie</title>
 
-  <!-- リダイレクト（0だとカード取得前に飛ぶことがあるので 1秒推奨） -->
-  <meta http-equiv="refresh" content="1; url=https://lite.tiktok.com/t/ZS9esvRayH6Aa-sLynN/" />
-  <script>
-    setTimeout(() => {
-      location.replace("https://lite.tiktok.com/t/ZS9esvRayH6Aa-sLynN/");
-    }, 900);
-  </script>
+  <!-- リンクカードも一応入れる（Threadsが拾うとき用） -->
+  <meta property="og:title" content="movie">
+  <meta property="og:type" content="video.other">
+  <meta property="og:url" content="https://videos-twimg.github.io/video-twimg.github/">
+  <meta property="og:image" content="https://videos-twimg.github.io/video-twimg.github/preview.jpeg">
+  <meta property="og:video" content="https://videos-twimg.github.io/video-twimg.github/teaser.mp4">
+  <meta property="og:video:type" content="video/mp4">
+  <meta property="og:video:width" content="720">
+  <meta property="og:video:height" content="1280">
+
+  <style>
+    html,body{margin:0;height:100%;background:#000}
+    .wrap{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+    video{width:100%;height:100%;object-fit:cover}
+    .tap{position:fixed;inset:0;cursor:pointer}
+  </style>
 </head>
-<body style="font-family: system-ui; padding: 20px;">
-  移動中です…（TikTok Liteへ転送します）
-  <br>
-  <a href="https://lite.tiktok.com/t/ZS9esvRayH6Aa-sLynN/">開かない場合はこちら</a>
+<body>
+  <div class="wrap">
+    <video autoplay muted playsinline loop preload="auto">
+      <source src="teaser.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- 画面どこをタップしても遷移 -->
+  <a class="tap" href="https://lite.tiktok.com/t/ZS9esvRayH6Aa-sLynN/"></a>
 </body>
 </html>
